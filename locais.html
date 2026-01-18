@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ClicksPerfeito | Locais</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="portifólio.html">Portfólio</a></li>
+                <li><a href="index.html#processo">Como funciona?</a></li>
+            </ul>
+        </nav>
+        <div class="action">
+            <a href="agendamento.html"><button class="action-btn">Agende seu Ensaio</button></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Locations Section -->
+        <section class="locations-section">
+            <div class="locations-header">
+                <h1 class="locations-title">Pontos Turísticos <span class="highlight">para Fotografar em São Carlos.</span></h1>
+                <p class="locations-subtitle">Descubra os locais mais inspiradores de São Carlos, perfeitos para criar seus melhores momentos fotografados.</p>
+            </div>
+
+            <!-- Location Filters -->
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="nature">Natureza</button>
+                <button class="category-btn" data-category="urban">Urbano</button>
+                <button class="category-btn" data-category="cultural">Cultural</button>
+            </div>
+
+            <!-- Locations Grid -->
+            <div class="locations-grid">
+                <!-- Nature -->
+                <div class="location-card nature" style="background-image: url('https://cdn.media-acidadeon.com.br/saocarlos/wp-content/uploads/sites/6/2023/09/sao_carlos_1024x576_09112020130702.jpg');">
+                    <div class="location-overlay">
+                        <h3>Parque Ecológico Municipal</h3>
+                        <p>Verde natural com trilhas e área de preservação ambiental.</p>
+                    </div>
+                </div>
+
+                <!-- Nature -->
+                <div class="location-card nature" style="background-image: url('https://s2-g1.glbimg.com/xFOq7Z7DO13wYD3y8HukBupCx-c=/0x0:4000x2250/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/T/4/vgJHXMTd6VJcOWPSVp6Q/20240106-094957.jpg');">
+                    <div class="location-overlay">
+                        <h3>Rio Monjolinho</h3>
+                        <p>Pôr do sol refletido nas águas tranquilas do rio.</p>
+                    </div>
+                </div>
+
+                <!-- Urban -->
+                <div class="location-card urban" style="background-image: url('https://praturista.com/wp-content/uploads/2017/08/sao-carlos-sp-praturista-0092100-9-A.jpg');">
+                    <div class="location-overlay">
+                        <h3>Museu Prof. Mário Tolentino</h3>
+                        <p>Arquitetura clássica e ambiente urbano vibrante do centro.</p>
+                    </div>
+                </div>
+
+                <!-- Cultural -->
+                <div class="location-card cultural" style="background-image: url('https://serradoitaqueri.com.br/wp-content/uploads/2022/01/serra-do-itaqueri-sao-carlos.jpg');">
+                    <div class="location-overlay">
+                        <h3>Catedral de São Carlos</h3>
+                        <p>Imponente arquitetura religiosa no coração da cidade.</p>
+                    </div>
+                </div>
+
+                <!-- Cultural -->
+                <div class="location-card cultural" style="background-image: url('https://saocarlosemrede.com.br/wp-content/uploads/2024/04/museu-tam-111-696x416.jpg');">
+                    <div class="location-overlay">
+                        <h3>Museu de Asas de um Sonho (TAM)</h3>
+                        <p>Aeronaves históricas e museu de aviação internacional.</p>
+                    </div>
+                </div>
+
+                <!-- Urban -->
+                <div class="location-card urban" style="background-image: url('https://sonharemorar.mrv.com.br/wp-content/uploads/2023/08/museu-de-sao-carlos-1024x683.webp');">
+                    <div class="location-overlay">
+                        <h3>Estação Ferroviária</h3>
+                        <p>Arquitetura histórica da ferrovia com passado centenário.</p>
+                    </div>
+                </div>
+
+                <!-- Nature -->
+                <div class="location-card nature" style="background-image: url('https://praturista.com/wp-content/uploads/2017/09/sao-carlos-sp-praturista-0092900-34-DiC.jpg');">
+                    <div class="location-overlay">
+                        <h3>Horto Florestal</h3>
+                        <p>Árvores centenárias e trilhas naturais tranquilas.</p>
+                    </div>
+                </div>
+
+                <!-- Urban -->
+                <div class="location-card urban" style="background-image: url('https://www.segef.ufscar.br/wp-content/uploads/2019/04/ufscar-1280x640.jpg');">
+                    <div class="location-overlay">
+                        <h3>UFSCar - Campus Principal</h3>
+                        <p>Arquitetura moderna e ambiente acadêmico inspirador.</p>
+                    </div>
+                </div>
+
+                <!-- Urban -->
+                <div class="location-card urban" style="background-image: url('img/DSC02399.JPG');">
+                    <div class="location-overlay">
+                        <h3>Parque do Bicão</h3>
+                        <p>Estrutura histórica com perspectivas urbanas únicas.</p>
+                    </div>
+                </div>
+
+                <!-- Nature -->
+                <div class="location-card nature" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=600&fit=crop&q=80');">
+                    <div class="location-overlay">
+                        <h3>Vale Verde</h3>
+                        <p>Paisagem natural com vegetação exuberante e serena.</p>
+                    </div>
+                </div>
+
+                <!-- Cultural -->
+                <div class="location-card cultural" style="background-image: url('https://cdn.media-acidadeon.com.br/saocarlos/wp-content/uploads/sites/6/2023/07/AvenidaSoCarlosterinterdiesnestefimdesemana_Tamanho_2_image.jpg');">
+                    <div class="location-overlay">
+                        <h3>Avenida São Carlos</h3>
+                        <p>Principal avenida com comércio e espaços culturais.</p>
+                    </div>
+                </div>
+
+                <!-- Nature -->
+                <div class="location-card nature" style="background-image: url('https://caminhosmelevem.com/wp-content/uploads/2021/03/o-que-fazer-em-sao-carlos-sp-9.jpg');">
+                    <div class="location-overlay">
+                        <h3>Praça da Catedral</h3>
+                        <p>Espaço público com vista panorâmica e estrutura verde.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="locations-info">
+                <div class="info-card">
+                    <h3>Melhor Período</h3>
+                    <p>Manhã (6h-9h) e final de tarde (16h-18h) para luz natural perfeita.</p>
+                </div>
+                <div class="info-card">
+                    <h3> Dica de Fotografia</h3>
+                    <p>Explore ângulos diferentes e aproveite as sombras para criar profundidade.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Clima Ideal</h3>
+                    <p>Dias nublados oferecem luz difusa, dias claros criam contraste dramático.</p>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <h2>Descubra Novos Locais.</h2>
+                <p>Receba dicas semanais de novos pontos turísticos em São Carlos e inspiração para suas sessões fotográficas.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Digite seu endereço de email" required>
+                    <button type="submit" class="subscribe-btn">Inscrever-se</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-col brand">
+                <div class="logo">
+                    <span class="logo-icon"></span>
+                    <strong>ClicksPerfeitos</strong>
+                </div>
+                <p>
+                    Elevando sua imagem pessoal através<br>
+                    de fotografia profissional e impressões<br>
+                    de luxo.
+                </p>
+
+                <div class="social">
+                    <a href="#" aria-label="Instagram"></a>
+                    <a href="#" aria-label="Email"></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Planos de Impressão</a></li>
+                    <li><a href="#">Agendamento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Políticas de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Newsletter</h4>
+                <p>
+                    Inscreva-se para receber dicas de<br>
+                    poses e descontos exclusivos.
+                </p>
+
+                <form>
+                    <input type="email" placeholder="Seu melhor e-mail">
+                    <button type="submit">Assinar</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2024 Clicks Perfeitos Fotografia Ltda. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    // Locations Category Filter
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const locationCards = document.querySelectorAll('.location-card');
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const category = btn.getAttribute('data-category');
+
+            locationCards.forEach(card => {
+                // Show all if "all" is selected
+                if (category === 'all') {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 10);
+                } else {
+                    // Show only cards with matching category
+                    if (card.classList.contains(category)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                }
+            });
+        });
+    });
+
+    // Add transition for location cards
+    const locationCardsStyle = document.createElement('style');
+    locationCardsStyle.textContent = `
+        .location-card {
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+    `;
+    document.head.appendChild(locationCardsStyle);
+</script>

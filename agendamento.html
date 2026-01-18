@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ClicksPerfeito | Agendamento</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="portifólio.html">Portfólio</a></li>
+                <li><a href="index.html#processo">Como funciona?</a></li>
+            </ul>
+        </nav>
+        <div class="action">
+            <a href="agendamento.html"><button class="action-btn">Agende seu Ensaio</button></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Booking Section -->
+        <section class="booking-section">
+            <div class="booking-header">
+                <h1 class="booking-title">Agende seu <span class="highlight">Ensaio Perfeito.</span></h1>
+                <p class="booking-subtitle">Preencha os dados abaixo e nossa equipe entrará em contato para confirmar seu agendamento.</p>
+            </div>
+
+            <div class="booking-container">
+                <!-- Packages Section -->
+                <div class="packages-section">
+                    <h2>Escolha seu Pacote</h2>
+                    <div class="packages-grid">
+                        <div class="package-card" data-package="individual">
+                            <div class="package-icon">👤</div>
+                            <h3>Ensaio Individual</h3>
+                            <p class="price">R$ 299</p>
+                            <ul class="package-features">
+                                <li>✓ 1 hora de sessão</li>
+                                <li>✓ 50 fotos editadas</li>
+                                <li>✓ 1 local à escolha</li>
+                                <li>✓ Entrega em 7 dias</li>
+                            </ul>
+                            <button class="select-package" data-package="individual">Selecionar</button>
+                        </div>
+
+                        <div class="package-card popular" data-package="casal">
+                            <div class="popular-badge">Mais Popular</div>
+                            <div class="package-icon">💑</div>
+                            <h3>Ensaio Casal</h3>
+                            <p class="price">R$ 499</p>
+                            <ul class="package-features">
+                                <li>✓ 2 horas de sessão</li>
+                                <li>✓ 100 fotos editadas</li>
+                                <li>✓ 2 locais à escolha</li>
+                                <li>✓ Entrega em 7 dias</li>
+                            </ul>
+                            <button class="select-package" data-package="casal">Selecionar</button>
+                        </div>
+
+                        <div class="package-card" data-package="familia">
+                            <div class="package-icon">👨‍👩‍👧‍👦</div>
+                            <h3>Ensaio Família</h3>
+                            <p class="price">R$ 649</p>
+                            <ul class="package-features">
+                                <li>✓ 2 horas de sessão</li>
+                                <li>✓ 120 fotos editadas</li>
+                                <li>✓ 2 locais à escolha</li>
+                                <li>✓ Entrega em 7 dias</li>
+                            </ul>
+                            <button class="select-package" data-package="familia">Selecionar</button>
+                        </div>
+
+                        <div class="package-card" data-package="premium">
+                            <div class="package-icon">⭐</div>
+                            <h3>Ensaio Premium</h3>
+                            <p class="price">R$ 999</p>
+                            <ul class="package-features">
+                                <li>✓ 4 horas de sessão</li>
+                                <li>✓ 200 fotos editadas</li>
+                                <li>✓ 3 locais à escolha</li>
+                                <li>✓ Entrega em 5 dias</li>
+                            </ul>
+                            <button class="select-package" data-package="premium">Selecionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form Section -->
+                <div class="form-section">
+                    <h2>Preencha seus Dados</h2>
+                    <form class="booking-form" id="bookingForm">
+                        <div class="selected-package-display">
+                            <p>Pacote selecionado: <strong id="selectedPackageName">Nenhum</strong></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nome Completo *</label>
+                            <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefone *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(11) 9999-9999">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Data Preferida *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Horário Preferido *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Selecione um horário</option>
+                                <option value="06:00">06:00 - Nascer do Sol</option>
+                                <option value="08:00">08:00 - Manhã</option>
+                                <option value="10:00">10:00 - Meio da Manhã</option>
+                                <option value="14:00">14:00 - Tarde</option>
+                                <option value="16:00">16:00 - Fim da Tarde</option>
+                                <option value="18:00">18:00 - Pôr do Sol</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Local Preferido *</label>
+                            <select id="location" name="location" required>
+                                <option value="">Escolha um local</option>
+                                <option value="parque">Parque Ecológico Municipal</option>
+                                <option value="rio">Rio Monjolinho</option>
+                                <option value="centro">Centro Histórico</option>
+                                <option value="catedral">Catedral de São Carlos</option>
+                                <option value="ferrovia">Estação Ferroviária</option>
+                                <option value="horto">Horto Florestal</option>
+                                <option value="ponte">Ponte Sobre Rio</option>
+                                <option value="vale">Vale Verde</option>
+                                <option value="avenida">Avenida São Carlos</option>
+                                <option value="praca">Praça Bandeirantes</option>
+                                <option value="outro">Outro local (descrever)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="theme">Tema/Estilo *</label>
+                            <select id="theme" name="theme" required>
+                                <option value="">Selecione um estilo</option>
+                                <option value="natural">Natural e Espontâneo</option>
+                                <option value="classico">Clássico e Elegante</option>
+                                <option value="criativo">Criativo e Artístico</option>
+                                <option value="despojado">Despojado e Moderno</option>
+                                <option value="romantico">Romântico e Intimista</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="observation">Observações Adicionais</label>
+                            <textarea id="observation" name="observation" placeholder="Conte-nos sobre suas ideias e expectativas..." rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <label for="agree">Concordo com os termos de agendamento *</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Enviar Agendamento</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="process-section">
+                <h2>Como Funciona o Processo</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Escolha o Pacote</h3>
+                        <p>Selecione o pacote que melhor atende suas necessidades.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Preencha os Dados</h3>
+                        <p>Nos forneça suas informações e preferências de agendamento.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Confirmação</h3>
+                        <p>Nossa equipe entrará em contato para confirmar e ajustar detalhes.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Sessão Fotográfica</h3>
+                        <p>Realize seu ensaio no dia e local agendado.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h3>Edição Profissional</h3>
+                        <p>Suas fotos passam por edição e tratamento profissional.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h3>Entrega</h3>
+                        <p>Receba seus arquivos de alta qualidade prontos para usar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-col brand">
+                <div class="logo">
+                    <span class="logo-icon"></span>
+                    <strong>ClicksPerfeitos</strong>
+                </div>
+                <p>
+                    Elevando sua imagem pessoal através<br>
+                    de fotografia profissional e impressões<br>
+                    de luxo.
+                </p>
+
+                <div class="social">
+                    <a href="#" aria-label="Instagram"></a>
+                    <a href="#" aria-label="Email"></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Planos de Impressão</a></li>
+                    <li><a href="#">Agendamento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Políticas de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Newsletter</h4>
+                <p>
+                    Inscreva-se para receber dicas de<br>
+                    poses e descontos exclusivos.
+                </p>
+
+                <form>
+                    <input type="email" placeholder="Seu melhor e-mail">
+                    <button type="submit">Assinar</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2024 Clicks Perfeitos Fotografia Ltda. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    // Package Selection
+    const selectPackageButtons = document.querySelectorAll('.select-package');
+    const selectedPackageNameElement = document.getElementById('selectedPackageName');
+
+    selectPackageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const package = button.getAttribute('data-package');
+            const packageName = button.closest('.package-card').querySelector('h3').textContent;
+            
+            selectedPackageNameElement.textContent = packageName;
+            
+            // Visual feedback
+            selectPackageButtons.forEach(btn => btn.style.backgroundColor = 'transparent');
+            button.style.backgroundColor = '#7F13EC';
+            button.style.color = '#ffffff';
+        });
+    });
+
+    // Form Submission
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(bookingForm);
+        const data = Object.fromEntries(formData);
+        
+        if (selectedPackageNameElement.textContent === 'Nenhum') {
+            alert('Por favor, selecione um pacote antes de enviar.');
+            return;
+        }
+        
+        // Show success message
+        alert(`Obrigado, ${data.name}! Seu agendamento foi recebido.\nNossa equipe entrará em contato em breve para confirmação.`);
+        
+        // Reset form
+        bookingForm.reset();
+        selectedPackageNameElement.textContent = 'Nenhum';
+        selectPackageButtons.forEach(btn => btn.style.backgroundColor = 'transparent');
+    });
+
+    // Set minimum date to today
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+</script>
