@@ -25,30 +25,94 @@ header {
     align-items: center;
     border-bottom: 0.01rem solid #b4b4b44b;
     background-color: transparent;
-    padding: 0 1rem;
-    gap: 1rem;
 }
 
 .logo {
-    width: 30%;
-    min-width: 50px;
-    height: 100%;
-    background-color: red;
-    flex-shrink: 0;
+    width: 12rem;
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: auto;
+    height: 4rem;
+    object-fit: contain;
+    object-position: left;
 }
 
 nav {
-    width: 60%;
+    width: auto;
     height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
 }
 
+.nav-desktop {
+
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.4rem;
+}
+
+.hamburger span {
+    width: 1.8rem;
+    height: 0.2rem;
+    background-color: #ffffff;
+    border-radius: 0.1rem;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.7rem);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.3rem, -0.65rem);
+}
+
+.nav-mobile {
+    display: none;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: #0f0a15 !important;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    z-index: 99999 !important;
+    opacity: 1 !important;
+}
+
+.nav-mobile.active {
+    display: flex !important;
+}
+
+
+
 .menu-links {
-    width: 70%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -66,8 +130,12 @@ li a {
     white-space: nowrap;
 }
 
+#wavemb{
+    display: none;
+}
+
 .action {
-    width: 30%;
+    width: auto;
     height: 3rem;
     display: flex;
     justify-content: center;
@@ -132,7 +200,7 @@ li a {
 
 .apresentacao {
     width: 100%;
-    height: 50rem;
+    height: 45rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,20 +210,25 @@ li a {
 
 .foto {
     width: 60%;
-    height: 100%;
+    height: 45rem;
+
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .foto img {
-    width: auto;
+    width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -164,7 +237,7 @@ li a {
 .texto {
     width: 40%;
     height: 100%;
-    padding-left: 5rem;
+    padding-left: 2rem;
     background-color: #7F13EC;
     display: flex;
     flex-direction: column;
@@ -185,17 +258,17 @@ li a {
     justify-content: center;
     align-items: center;
 
-    margin-top: 5rem;
+    margin-top: 0rem;
 
     background-color: #5c13568a;
 }
 
 .texto h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     color: #ffffff;
 
-    width: 60%;
+    width: 90%;
 
     font-weight: 700;
 
@@ -207,7 +280,7 @@ li a {
     font-size: 1.8rem;
     color: #ffffff;
 
-    width: 70%;
+    width: 90%;
 
     font-weight: 400;
 }
@@ -523,7 +596,7 @@ li a {
 .footer {
     background: radial-gradient(circle at top, #1a0f2b, #0d0618);
     color: #cfc9e3;
-    padding: 4rem 2rem 2rem;
+    padding: 3rem 1.5rem 2rem;
     font-family: system-ui, sans-serif;
 }
 
@@ -1478,83 +1551,179 @@ li a {
 
 @media (max-width: 767px) {
     html {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     /* Header Mobile */
     header {
-        height: 4rem;
-        padding: 0 0.5rem;
+        height: 3.5rem;
+        padding: 0 0.75rem;
         flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #wavemb{
+        position: absolute;
+
+        top: -43rem;
+
+        display: block;
+
+        transform: scaleX(-1);
+    }
+
+    .hamburger {
+        display: flex;
+        order: 2;
     }
 
     .logo {
-        width: 15%;
-        min-width: 40px;
+        width: 10%;
+        min-width: 35px;
+        order: 1;
     }
 
-    nav {
-        width: calc(100% - 150px);
+    .nav-desktop {
+        display: none !important;
+    }
+
+    .nav-mobile {
+        display: none;
+        position: fixed !important;
+        top: 3.5rem !important;
+        left: 0 !important;
+        width: 100vw !important;
+        background-color: #191022 !important;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        z-index: 99999;
+        height: auto;
+    }
+
+    .nav-mobile.active {
+        display: flex !important;
     }
 
     .menu-links {
-        gap: 0.3rem;
-        font-size: 0.75rem;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0 2rem 0;
+        margin: 0;
+    }
+
+    .menu-links li {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-bottom: none;
+        list-style: none;
     }
 
     li a {
-        font-size: 0.75rem;
+        font-size: 1.05rem;
+        font-weight: 500;
+    }
+
+    .menu-btn {
+        padding: 0.5rem 1.5rem !important;
+        margin-top: 0.5rem;
+    }
+
+    .action-btn-mobile {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        height: auto;
+        border: none;
+        border-radius: 0.5rem;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background-color: #7F13EC;
+        white-space: nowrap;
+    }
+
+    .action-btn-mobile:hover {
+        transform: translateY(-0.2rem);
+        box-shadow: 0 5px 15px rgba(127, 19, 236, 0.4);
     }
 
     .action {
-        width: auto;
+        width: 20%;
+        order: 3;
+        display: none;
     }
 
     .action-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        height: 2.5rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        height: auto;
+        white-space: normal;
     }
 
     /* General */
     .apresentacao {
         width: 100%;
-        height: 30rem;
+        height: 20rem;
         flex-direction: column;
-        margin-top: 0.5rem;
+        margin-top: 0;
+        gap: 0;
+        
+        padding: 0;
     }
 
     .foto {
         width: 100%;
-        height: 50%;
+        height: 25rem;
     }
+    
 
     .texto {
         width: 100%;
-        height: 50%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        height: auto;
+        padding: 1.5rem;
+        background-color: #7F13EC;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        font-size: 0.95rem;
+        padding: 0.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
 
     .texto h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         width: 100%;
+
+        text-align: center;
+        margin-bottom: 1rem;
     }
 
     .subtt {
-        font-size: 1rem;
+        font-size: 1.2rem;
         width: 100%;
+        margin-bottom: 1.5rem;
     }
 
     .meiar {
         width: 100%;
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
     }
 
     .agenda, .portifólio {
-        width: 100%;
-        height: 2.5rem;
+        flex: 1;
+        height: 2.8rem;
         font-size: 1rem;
     }
 
@@ -1565,18 +1734,18 @@ li a {
     }
 
     #secoes {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-top: 2rem;
     }
 
     #processo h1 {
-        font-size: 1.8rem;
-        margin-top: 0.5rem;
+        font-size: 2rem;
+        margin-top: 1rem;
     }
 
     #tt {
         width: 95%;
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
 
     .triple-cards {
@@ -1592,11 +1761,11 @@ li a {
     }
 
     .cards h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .cards p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     #portifolio {
@@ -1610,7 +1779,7 @@ li a {
     }
 
     .titulo-portifolio h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-top: 0.5rem;
     }
 
@@ -1650,22 +1819,48 @@ li a {
     }
 
     .textos-localizacao h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         width: 100%;
         margin: 0.5rem 0;
     }
 
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1rem;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
     .footer h4 {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
     }
 
     .footer p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .footer ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer ul li a {
+        font-size: 0.95rem;
+    }
+
+    .newsletter input {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .newsletter button {
+        padding: 0.65rem;
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 1rem;
         font-size: 0.85rem;
     }
 
@@ -1676,13 +1871,13 @@ li a {
     }
 
     .portfolio-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         width: 100%;
         margin: 0;
     }
 
     .portfolio-subtitle {
-        font-size: 0.85rem;
+        font-size: 1rem;
         margin-top: 0.75rem;
     }
 
@@ -1702,12 +1897,12 @@ li a {
     }
 
     .newsletter-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 0.75rem;
     }
 
     .newsletter-section p {
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
     }
 
@@ -1717,14 +1912,14 @@ li a {
 
     .newsletter-form input {
         min-width: 100%;
-        padding: 0.6rem;
-        font-size: 0.9rem;
+        padding: 0.7rem;
+        font-size: 1rem;
     }
 
     .subscribe-btn {
         width: 100%;
-        padding: 0.6rem;
-        font-size: 0.9rem;
+        padding: 0.75rem;
+        font-size: 1rem;
     }
 
     /* Locations Section Mobile */
@@ -1734,7 +1929,7 @@ li a {
     }
 
     .locations-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         width: 100%;
         margin: auto;
         margin-top: 2rem;
@@ -1742,7 +1937,7 @@ li a {
     }
 
     .locations-subtitle {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     .locations-grid {
@@ -1756,11 +1951,11 @@ li a {
     }
 
     .location-overlay h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .location-overlay p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     .locations-info {
@@ -1772,11 +1967,11 @@ li a {
     }
 
     .info-card h3 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .info-card p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     /* Booking Section Mobile */
@@ -1786,18 +1981,18 @@ li a {
     }
 
     .booking-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         width: 100%;
         margin: auto;
     }
 
     .booking-subtitle {
-        font-size: 0.85rem;
+        font-size: 1rem;
         margin-top: 0.75rem;
     }
 
     .packages-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 1.5rem;
     }
 
@@ -1815,24 +2010,24 @@ li a {
     }
 
     .package-icon {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .package-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .price {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .package-features li {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     .select-package {
-        font-size: 0.85rem;
-        padding: 0.6rem;
+        font-size: 1rem;
+        padding: 0.75rem;
     }
 
     .form-section {
@@ -1841,7 +2036,7 @@ li a {
     }
 
     .form-section h2 {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         margin-bottom: 1.5rem;
     }
 
@@ -1853,17 +2048,17 @@ li a {
     .form-group input,
     .form-group select,
     .form-group textarea {
-        padding: 0.6rem;
-        font-size: 0.9rem;
-    }
-
-    .submit-btn {
         padding: 0.75rem;
         font-size: 1rem;
     }
 
+    .submit-btn {
+        padding: 0.9rem;
+        font-size: 1.1rem;
+    }
+
     .process-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 2rem;
     }
 
@@ -1873,17 +2068,17 @@ li a {
     }
 
     .step-number {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
     }
 
     .step h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .step p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     /* Category Filters Mobile */
@@ -1893,8 +2088,8 @@ li a {
     }
 
     .category-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -1902,59 +2097,74 @@ li a {
 
 @media (max-width: 480px) {
     html {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     header {
-        height: 3.5rem;
+        height: 3rem;
     }
 
     .logo {
-        width: 12%;
-        min-width: 35px;
+        width: 8%;
+        min-width: 30px;
     }
 
-    nav {
-        width: calc(100% - 120px);
-    }
-
-    .menu-links {
-        gap: 0.2rem;
-    }
-
-    li a {
-        font-size: 0.65rem;
+    .hamburger span {
+        width: 1.5rem;
+        height: 0.18rem;
     }
 
     .action-btn {
         padding: 0.4rem 0.8rem;
-        font-size: 0.65rem;
-        height: 2rem;
+        font-size: 0.75rem;
+        height: auto;
     }
 
     .apresentacao {
-        height: 25rem;
+        height: auto;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .foto {
+        height: 7rem;
     }
 
     .texto {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding: 1rem;
+    }
+
+    .card {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
     }
 
     .texto h1 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
     }
 
     .subtt {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .meiar {
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .agenda, .portifólio {
+        font-size: 0.95rem;
+        height: 2.4rem;
     }
 
     #processo h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     #tt {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .cards {
@@ -1962,16 +2172,16 @@ li a {
     }
 
     .cards h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .cards p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .icon-cards {
-        width: 4rem;
-        height: 4rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 
     .square {
@@ -1980,11 +2190,11 @@ li a {
     }
 
     .textos-localizacao h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .portfolio-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .newsletter-section {
@@ -1992,19 +2202,19 @@ li a {
     }
 
     .newsletter-section h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .locations-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .booking-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .packages-section h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .form-section {
@@ -2012,10 +2222,20 @@ li a {
     }
 
     .footer-container {
-        padding: 0 0.75rem;
+        padding: 0.5rem;
+        gap: 1.2rem;
     }
 
     .footer h4 {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer ul li a {
+        font-size: 0.9rem;
     }
 }
