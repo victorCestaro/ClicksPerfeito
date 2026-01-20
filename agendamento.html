@@ -11,8 +11,12 @@
 <body>
 
     <header>
-        <div class="logo"></div>
-        <nav>
+        <div class="logo">
+            <img src="/img/logo-rodapé-clicksperfeitos(branco).png" alt="">
+        </div>
+        
+        <!-- Menu Desktop -->
+        <nav class="nav-desktop">
             <ul class="menu-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="locais.html">Locais</a></li>
@@ -20,6 +24,23 @@
                 <li><a href="index.html#processo">Como funciona?</a></li>
             </ul>
         </nav>
+        
+        <!-- Menu Mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="portifólio.html">Portfólio</a></li>
+                <li><a href="index.html#processo">Como funciona?</a></li>
+                <li class="menu-btn"><a href="agendamento.html"><button class="action-btn-mobile">Agende seu Ensaio</button></a></li>
+            </ul>
+        </nav>
+        
         <div class="action">
             <a href="agendamento.html"><button class="action-btn">Agende seu Ensaio</button></a>
         </div>
@@ -94,7 +115,7 @@
                 </div>
 
                 <!-- Booking Form Section -->
-                <div class="form-section">
+                <div class="form-section" id="formSection">
                     <h2>Preencha seus Dados</h2>
                     <form class="booking-form" id="bookingForm">
                         <div class="selected-package-display">
@@ -230,8 +251,7 @@
 
             <div class="footer-col brand">
                 <div class="logo">
-                    <span class="logo-icon"></span>
-                    <strong>ClicksPerfeitos</strong>
+                    <img src="/img/logo-rodapé-clicksperfeitos(branco).png" alt="">
                 </div>
                 <p>
                     Elevando sua imagem pessoal através<br>
@@ -293,6 +313,7 @@
     // Package Selection
     const selectPackageButtons = document.querySelectorAll('.select-package');
     const selectedPackageNameElement = document.getElementById('selectedPackageName');
+    const formSection = document.getElementById('formSection');
 
     selectPackageButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -305,6 +326,11 @@
             selectPackageButtons.forEach(btn => btn.style.backgroundColor = 'transparent');
             button.style.backgroundColor = '#7F13EC';
             button.style.color = '#ffffff';
+            
+            // Scroll para o formulário
+            setTimeout(() => {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
         });
     });
 
@@ -334,4 +360,21 @@
     const dateInput = document.getElementById('date');
     const today = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', today);
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+    const menuLinks = document.querySelectorAll('.nav-mobile .menu-links a');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMobile.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMobile.classList.remove('active');
+        });
+    });
 </script>

@@ -11,8 +11,12 @@
 <body>
 
     <header>
-        <div class="logo"></div>
-        <nav>
+        <div class="logo">
+            <img src="/img/logo-rodapé-clicksperfeitos(branco).png" alt="">
+        </div>
+        
+        <!-- Menu Desktop -->
+        <nav class="nav-desktop">
             <ul class="menu-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="locais.html">Locais</a></li>
@@ -20,6 +24,23 @@
                 <li><a href="index.html#processo">Como funciona?</a></li>
             </ul>
         </nav>
+        
+        <!-- Menu Mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="portifólio.html">Portfólio</a></li>
+                <li><a href="index.html#processo">Como funciona?</a></li>
+                <li class="menu-btn"><a href="agendamento.html"><button class="action-btn-mobile">Agende seu Ensaio</button></a></li>
+            </ul>
+        </nav>
+        
         <div class="action">
             <a href="agendamento.html"><button class="action-btn">Agende seu Ensaio</button></a>
         </div>
@@ -173,8 +194,8 @@
 
             <div class="footer-col brand">
                 <div class="logo">
-                    <span class="logo-icon"></span>
-                    <strong>ClicksPerfeitos</strong>
+                    <img src="/img/logo-rodapé-clicksperfeitos(branco).png" alt="">
+                    
                 </div>
                 <p>
                     Elevando sua imagem pessoal através<br>
@@ -280,4 +301,21 @@
         }
     `;
     document.head.appendChild(locationCardsStyle);
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+    const menuLinks = document.querySelectorAll('.nav-mobile .menu-links a');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMobile.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMobile.classList.remove('active');
+        });
+    });
 </script>
