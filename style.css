@@ -53,7 +53,7 @@ nav {
 
 .nav-desktop {
 
-    width: 40%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
